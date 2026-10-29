@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Trabalhos Acadêmicos · Área do(a) aluno(a)</title>
+    <meta name="description" content="Entregue e acompanhe seus trabalhos acadêmicos: APS, Estágio, PIM e TCC." />
+    <meta name="theme-color" content="#000080" />
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23000080'/%3E%3Ctext x='16' y='22' font-family='Arial' font-weight='900' font-style='italic' font-size='15' fill='%23ffc20e' text-anchor='middle'%3EU%3C/text%3E%3C/svg%3E" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,500;0,700;0,800;1,400;1,800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/trabalhos.css" />
+
+    <script src="js/data.js" defer></script>
+    <script src="js/common.js" defer></script>
+    <script src="js/trabalhos.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="Página inicial da Área do(a) aluno(a)">
+        <span class="brand__logo" aria-hidden="true">UNIP</span>
+        <span class="brand__title">Área do(a) aluno(a)</span>
+      </a>
+
+      <div class="user">
+        <button class="user__toggle" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="user-menu">
+          <span class="user__info">
+            <span class="user__name" data-user-name></span>
+            <span class="user__email" data-user-email></span>
+          </span>
+          <i class="fa-solid fa-chevron-down user__chevron" aria-hidden="true"></i>
+          <i class="fa-solid fa-circle-user user__avatar" aria-hidden="true"></i>
+        </button>
+        <ul class="user__menu" id="user-menu" role="menu" hidden>
+          <li role="none"><a role="menuitem" href="#" data-link="profile"><i class="fa-regular fa-user" aria-hidden="true"></i>Meus dados</a></li>
+          <li role="none"><a role="menuitem" href="#" data-link="logout"><i class="fa-solid fa-arrow-right-from-bracket" aria-hidden="true"></i>Sair</a></li>
+        </ul>
+        <a class="user__logout" href="#" data-link="logout" aria-label="Sair">
+          <i class="fa-solid fa-arrow-right-from-bracket" aria-hidden="true"></i>
+        </a>
+      </div>
+    </header>
+
+    <main class="page" id="conteudo" tabindex="-1">
+      <nav class="crumbs" aria-label="Você está em">
+        <ol>
+          <li><a href="./">Início</a></li>
+          <li><a href="./#academico">Acadêmico</a></li>
+          <li aria-current="page">Trabalhos Acadêmicos</li>
+        </ol>
+      </nav>
+
+      <section class="page-head" aria-labelledby="page-title">
+        <a class="page-head__back" href="./#academico">
+          <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+          <span>Voltar</span>
+        </a>
+        <div>
+          <h1 class="page-head__title" id="page-title">Trabalhos Acadêmicos</h1>
+          <p class="page-head__text">APS, Estágio, PIM e TCC: envie seus arquivos e acompanhe as entregas.</p>
+        </div>
+      </section>
+
+      <section class="board" aria-label="Entregas">
+        <div class="tabs" role="tablist" aria-label="Situação dos trabalhos">
+          <button class="tab" role="tab" id="tab-pending" aria-controls="panel-pending" aria-selected="true" type="button">
+            <i class="fa-regular fa-clock" aria-hidden="true"></i>
+            Para entregar
+            <span class="tab__count" data-count="pending">0</span>
+          </button>
+          <button class="tab" role="tab" id="tab-done" aria-controls="panel-done" aria-selected="false" tabindex="-1" type="button">
+            <i class="fa-regular fa-circle-check" aria-hidden="true"></i>
+            Concluídos
+            <span class="tab__count" data-count="done">0</span>
+          </button>
+        </div>
+
+        <div class="tabpanel" role="tabpanel" id="panel-pending" aria-labelledby="tab-pending" tabindex="0">
+          <ul class="tasks" data-list="pending" aria-busy="true">
+            <li class="task task--skeleton" aria-hidden="true"></li>
+          </ul>
+        </div>
+
+        <div class="tabpanel" role="tabpanel" id="panel-done" aria-labelledby="tab-done" tabindex="0" hidden>
+          <ul class="tasks" data-list="done"></ul>
+        </div>
+      </section>
+
+      <noscript>
+        <p class="state">Ative o JavaScript para enviar e acompanhar seus trabalhos.</p>
+      </noscript>
+
+      <footer class="footer">
+        <p>UNIP – Universidade Paulista.</p>
+        <a class="footer__link" href="#" data-link="privacy">Política de Privacidade</a>
+      </footer>
+    </main>
+
+    <div class="toast" role="status" aria-live="polite" data-toast hidden></div>
+
+    <dialog class="dialog" data-dialog aria-labelledby="dialog-title" aria-describedby="dialog-text">
+      <form method="dialog">
+        <h2 class="dialog__title" id="dialog-title">Cancelar entrega?</h2>
+        <p class="dialog__text" id="dialog-text">O arquivo será removido e o trabalho voltará para “Para entregar”.</p>
+        <div class="dialog__actions">
+          <button class="btn btn--ghost" value="cancel" type="submit">Manter entrega</button>
+          <button class="btn btn--danger" value="confirm" type="submit">Cancelar entrega</button>
+        </div>
+      </form>
+    </dialog>
+  </body>
+</html>
